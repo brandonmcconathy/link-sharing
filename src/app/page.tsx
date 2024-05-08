@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { getDoc, doc } from "firebase/firestore"
+import { getDoc, doc, setDoc } from "firebase/firestore"
 import { db } from "../../lib/firebase"
 
 export default function Home() {
@@ -15,7 +15,6 @@ export default function Home() {
     const getDBData = async () => {
       const docSnap = await getDoc(doc(db, 'link', 'link'))
       setLink(docSnap.data()?.link)
-      console.log(docSnap.data()?.link)
     }
     getDBData()
     setLoading(false)
@@ -27,8 +26,13 @@ export default function Home() {
 
   const handleSubmit = (event: any) => {
     event.preventDefault()
+    AddDBData(input)
     setLink(input)
     setInput('')
+  }
+
+  const AddDBData = async (newLink: string) => {
+    await setDoc(doc(db, 'link', 'link'), {link : newLink})
   }
 
   return (
