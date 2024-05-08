@@ -29,7 +29,7 @@ export default function Home() {
           </> }
           <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center gap-5">
             <input onChange={handleChange} value={input} placeholder='New Link' required className="bg-amber-100 w-11/12 box-pop px-4 py-2 rounded-xl font-semibold outline-none focus:ring focus:ring-gray-300 transition duration-300 sm:w-5/6 lg:w-9/12"></input>
-            <button className="bg-red-800 px-4 py-2 rounded-xl font-semibold text-amber-100 box-pop hover:bg-red-900 hover:text-amber-50 transition duration-300">UPDATE</button>
+            <button className="bg-red-800 px-4 py-2 rounded-xl font-semibold text-amber-100 box-pop hover:bg-red-900 hover:text-amber-50 transition duration-300">Update</button>
           </form>
         </div>
       </main>
