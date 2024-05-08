@@ -2,11 +2,24 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { getDoc, doc } from "firebase/firestore"
+import { db } from "../../lib/firebase"
 
 export default function Home() {
 
   const [link, setLink] = useState('')
   const [input, setInput] = useState('')
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const getDBData = async () => {
+      const docSnap = await getDoc(doc(db, 'link', 'link'))
+      setLink(docSnap.data()?.link)
+      console.log(docSnap.data()?.link)
+    }
+    getDBData()
+    setLoading(false)
+  },[])
 
   const handleChange = (event: any) => {
     setInput(event.target.value)
