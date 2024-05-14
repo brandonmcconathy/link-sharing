@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <main className="flex flex-col justify-center items-center">
       <h1 className="mt-8 mb-20 text-3xl font-bold">Link Sharing</h1>
-      <div className="bg-amber-200 flex flex-col justify-center items-center gap-4 text-black text-lg font-semibold py-6 px-5 rounded-xl w-1/2">
+      <div className="bg-amber-200 flex flex-col justify-center items-center gap-4 text-black text-lg font-semibold mx-4 py-6 px-5 rounded-xl w-97 md:w-3/4 lg:w-7/12 xl:w-1/2">
         {link == '' ? <h1>No Link</h1> :
         <>
           <Link href={link} target="_blank">{link}</Link>
