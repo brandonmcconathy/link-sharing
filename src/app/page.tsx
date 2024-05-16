@@ -15,9 +15,9 @@ export default function Home() {
     const getDBData = async () => {
       const docSnap = await getDoc(doc(db, 'link', 'link'))
       setLink(docSnap.data()?.link)
+      setLoading(false)
     }
     getDBData()
-    setLoading(false)
   },[])
 
   const handleChange = (event: any) => {
