@@ -37,7 +37,7 @@ export default function Home() {
 
   const copyText = () => {
     navigator.clipboard.writeText(link)
-    const confirmEL = document.getElementById('copy-confirm')
+    document.getElementById('copy-confirm')!.style.visibility = 'visible'
   }
 
   return (
