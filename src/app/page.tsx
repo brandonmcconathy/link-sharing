@@ -38,6 +38,9 @@ export default function Home() {
   const copyText = () => {
     navigator.clipboard.writeText(link)
     document.getElementById('copy-confirm')!.style.visibility = 'visible'
+    setTimeout(() => {
+      document.getElementById('copy-confirm')!.style.visibility = 'invisible'
+    }, 3000)
   }
 
   return (
